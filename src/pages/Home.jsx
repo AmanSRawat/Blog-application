@@ -1,47 +1,49 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   const posts = [
-    {
-      id: 1,
-      title: 'Getting Started with React',
-      content: 'React is a powerful JavaScript library for building user interfaces. It makes development fun and efficient!',
-      author: 'Jane Doe',
-    },
-    {
-      id: 2,
-      title: 'Understanding State and Props',
-      content: 'State and props are fundamental concepts in React. State is mutable, while props are used to pass data.',
-      author: 'John Smith',
-    },
-    {
-      id: 3,
-      title: 'Why Choose React?',
-      content: 'React’s component-based architecture allows developers to reuse code and create scalable applications.',
-      author: 'Admin',
-    },
-    {
-      id: 4,
-      title: 'React vs. Angular',
-      content: 'React offers flexibility, while Angular provides a complete framework. Both have their own strengths.',
-      author: 'Dev Talk',
-    },
-    {
-      id: 5,
-      title: 'Building a To-Do App with React',
-      content: 'A To-Do app is a great way to learn React. Start with functional components and manage state effectively.',
-      author: 'Learner',
-    },
-  ];
+      {
+        id: 1,
+        title: "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+        desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. A possimus excepturi aliquid nihil cumque ipsam facere aperiam at! Ea dolorem ratione sit debitis deserunt repellendus numquam ab vel perspiciatis corporis!",
+        img: "https://images.pexels.com/photos/7008010/pexels-photo-7008010.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      },
+      {
+        id: 2,
+        title: "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+        desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. A possimus excepturi aliquid nihil cumque ipsam facere aperiam at! Ea dolorem ratione sit debitis deserunt repellendus numquam ab vel perspiciatis corporis!",
+        img: "https://images.pexels.com/photos/6489663/pexels-photo-6489663.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      },
+      {
+        id: 3,
+        title: "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+        desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. A possimus excepturi aliquid nihil cumque ipsam facere aperiam at! Ea dolorem ratione sit debitis deserunt repellendus numquam ab vel perspiciatis corporis!",
+        img: "https://images.pexels.com/photos/4230630/pexels-photo-4230630.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      },
+      {
+        id: 4,
+        title: "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+        desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. A possimus excepturi aliquid nihil cumque ipsam facere aperiam at! Ea dolorem ratione sit debitis deserunt repellendus numquam ab vel perspiciatis corporis!",
+        img: "https://images.pexels.com/photos/6157049/pexels-photo-6157049.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      },
+    ];
 
   return (
     <div className="home">
       <div className="posts">
         {posts.map(post => (
           <div className="post" key={post.id} >
-            <h2>{post.title}</h2>
-            <p>{post.content}</p>
-            <small>By <strong>{post.author}</strong></small>
+           <div className='img'> 
+            <img src = {post.img} alt=""/>
+           </div>
+           <div className='content'>
+            <Link className='link' to={`/post/${post.id}`}>
+            <h1>{post.title}</h1>
+            <p>{post.desc}</p>
+            <button>Read More</button>
+            </Link>
+           </div>
           </div>
         ))}
       </div>
